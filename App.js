@@ -1,26 +1,23 @@
 import React from 'react';
-import { View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import FirstView from './src/screens/FirstView';  // Doğru yolda olduğunuzdan emin olun
+import BeforeRegister from './src/screens/BeforeRegister';  // Diğer ekranları da import edin
 
-// Ekranlar (Screens)
-import FirstView from './src/screens/FirstView';
-import BeforeRegister from './src/screens/BeforeRegister';
-import Register from './src/screens/Register';
-import Login from './src/screens/Login';
-import Home from './src/screens/Home'
-import NewTask from './src/screens/NewTask';
-import Calendar from './src/screens/Calendar';
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <FirstView />
-      <BeforeRegister />
-      <Register />
-      <Login />
-      <Home />
-      <NewTask />
-      <Calendar />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="FirstView"
+        screenOptions={{ headerShown: false }}  // Tüm ekranlarda başlık kaldırılıyor
+      >
+        <Stack.Screen name="FirstView" component={FirstView} />
+        <Stack.Screen name="BeforeRegister" component={BeforeRegister} />
+        {/* Diğer ekranları burada sırasıyla ekleyebilirsiniz */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
