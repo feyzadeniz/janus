@@ -6,7 +6,7 @@ const BeforeRegister = ({ navigation }) => {
     <View style={styles.container}>
       {/* Vektörün PNG olarak gösterilmesi */}
       <Image
-        source={require('../assets/vectors/vector1.png')}  // PNG dosyasını import ediyoruz
+        source={require('../assets/vectors/vector1.png')}  // Verdiğiniz yolu bozmadan PNG dosyasını import ediyoruz
         style={styles.vector}
       />
       
@@ -15,7 +15,7 @@ const BeforeRegister = ({ navigation }) => {
       <Text style={styles.subtitle}>Hemen kayıt ol ve planlamaya başla.</Text>
 
       {/* Kayıt ol butonu */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('NextScreen')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Register')}>
         <Text style={styles.buttonText}>Kayıt ol</Text>
       </TouchableOpacity>
     </View>
@@ -25,34 +25,39 @@ const BeforeRegister = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EAF1F6',  // Arka plan rengi
+    backgroundColor: '#FFFFFF',  // Arka plan rengi
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
   },
   vector: {
-    width: 200,  // Resmin genişliği
-    height: 200, // Resmin yüksekliği
-    marginBottom: 40, // Resim ile metin arasındaki mesafe
+    width: 293,  // Resmin genişliği
+    height: 293, // Resmin yüksekliği
+    marginBottom: 90, // Resim ile metin arasındaki mesafe
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1E2A48',  // Başlık rengi
-    textAlign: 'center',
-    marginBottom: 10,
+    color: '#010D19',  // Yazı rengi
+    textAlign: 'center', // Yazı ortalanacak
+    fontFamily: 'MuseoModerno', // Yazı tipi
+    fontSize: 24, // Font boyutu
+    fontWeight: 'normal', // Font ağırlığı (normal)
+    lineHeight: 28, // Satır yüksekliği (font size ile orantılı)
+    marginBottom: 30,  // Başlık ve alt metin arasındaki mesafe
   },
   subtitle: {
-    fontSize: 16,
-    color: '#707070', // Alt metin rengi
-    textAlign: 'center',
-    marginBottom: 40,
+    color: '#010D19',  // Yazı rengi
+    textAlign: 'center', // Yazı ortalanacak
+    fontFamily: 'MuseoModerno', // Yazı tipi
+    fontSize: 24, // Font boyutu
+    fontWeight: 'normal', // Font ağırlığı (normal)
+    lineHeight: 28, // Satır yüksekliği (font size ile orantılı)
+    marginBottom: 40,  // Alt metin ile buton arasındaki mesafe
   },
   button: {
     backgroundColor: '#3498DB', // Buton rengi
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 8,
+    width:226 ,
+    height: 60,
+    borderRadius: 53,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',  // Drop shadow
